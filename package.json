@@ -4,14 +4,16 @@
   "description": "A REST API project, part of Free Code Camp's curriculum",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server",
+    "dev": "nodemon server | yarn pino-pretty",
     "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.16.4",
-    "mongoose": "^5.13.5"
+    "express-pino-logger": "^6.0.0",
+    "mongoose": "^5.13.5",
+    "pino": "^6.13.0"
   },
   "repository": {
     "url": "https://github.com/freeCodeCamp/boilerplate-project-exercisetracker"
@@ -22,6 +24,7 @@
     "express"
   ],
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "pino-pretty": "^5.1.2"
   }
 }
