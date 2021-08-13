@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-const userCollection = require('./models/user.model');
+const userModel = require('./models/user.model');
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
@@ -9,5 +9,5 @@ mongoose.connect(process.env.MONGODB_URI, {
 });
 
 module.exports = {
-  user: { ...userCollection.queries },
+  user: { ...userModel.queries },
 };
