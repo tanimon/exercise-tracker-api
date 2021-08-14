@@ -20,7 +20,7 @@ const createExercise = async (userId, description, duration, date) => {
   const populatedExercise = await exercise.execPopulate('user');
 
   return {
-    _id: populatedExercise._id,
+    _id: populatedExercise.user._id,
     username: populatedExercise.user.username,
     description: populatedExercise.description,
     duration: populatedExercise.duration,
