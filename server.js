@@ -9,7 +9,23 @@ app.use(express.urlencoded({ extended: false }));
 
 const expressPino = require('express-pino-logger');
 const logger = require('./utils/log');
-const logMiddleware = expressPino({ logger });
+const logMiddleware = expressPino({
+  logger,
+  serializers: {
+    req: (req) => {
+      return {
+        method: req.method,
+        url: req.url,
+        body: req.raw.body,
+      };
+    },
+    res: (res) => {
+      return {
+        status: res.statusCode,
+      };
+    },
+  },
+});
 
 app.use(logMiddleware);
 
