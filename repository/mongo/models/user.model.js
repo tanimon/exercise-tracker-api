@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 const createUser = async (username) => {
-  logger.info(`[user.collection] Creating a user: ${username}`);
+  logger.info(`[user.model] Creating a user: ${username}`);
   const user = await User.create({ username });
   return user;
 };
