@@ -13,6 +13,13 @@ const createUser = async (username) => {
   return user;
 };
 
+const getUsers = async () => {
+  logger.info('[user.model] Getting all users');
+  const users = await User.find({});
+  return users;
+};
+
 exports.queries = {
   createUser,
+  getUsers,
 };
