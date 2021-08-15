@@ -7,6 +7,12 @@ const createUser = async (username) => {
   return { _id: user._id, username: user.username };
 };
 
+const getUsers = async () => {
+  const users = await userRepository.getUsers();
+  return users;
+};
+
 module.exports = {
   createUser,
+  getUsers,
 };
