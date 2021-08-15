@@ -11,6 +11,17 @@ const createUser = async (req, res) => {
   res.json(user);
 };
 
+const getUsers = async (req, res) => {
+  req.log.info(`[user.controller] Getting users`);
+
+  const users = await userService.getUsers();
+
+  req.log.info(`[user.controller] Got users: ${JSON.stringify(users)}`);
+
+  res.json(users);
+};
+
 module.exports = {
   createUser,
+  getUsers,
 };
