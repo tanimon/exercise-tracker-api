@@ -28,4 +28,25 @@ const createExercise = async (userId, description, duration, date) => {
   };
 };
 
-exports.queries = { createExercise };
+const getExercisesByUserId = async (userId, from, to, limit) => {
+  const dateQuery = buildDateQuery(from, to);
+  return await Exercise.find({ user: userId, ...dateQuery })
+    .limit(limit)
+    .exec();
+};
+
+const buildDateQuery = (from, to) => {
+  const dateQuery = { date: {} };
+  if (from) {
+    dateQuery.date.$gte = from;
+  }
+  if (to) {
+    dateQuery.date.$lte = to;
+  }
+  return from || to ? dateQuery : undefined;
+};
+
+exports.queries = {
+  createExercise,
+  getExercisesByUserId,
+};

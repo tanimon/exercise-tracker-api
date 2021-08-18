@@ -16,6 +16,7 @@ const logMiddleware = expressPino({
       return {
         method: req.method,
         url: req.url,
+        query: req.query,
         body: req.raw.body,
       };
     },

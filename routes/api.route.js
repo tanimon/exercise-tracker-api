@@ -7,5 +7,6 @@ const router = express.Router();
 router.post('/users', userController.createUser);
 router.get('/users', userController.getUsers);
 router.post('/users/:_id/exercises', exerciseController.createExercise);
+router.get('/users/:_id/logs', exerciseController.getExercisesByUserId);
 
 module.exports = router;
