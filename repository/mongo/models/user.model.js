@@ -19,7 +19,14 @@ const getUsers = async () => {
   return users;
 };
 
+const getUserByUserId = async (userId) => {
+  logger.info(`[user.model] Getting a user by userId: ${userId}`);
+  const user = await User.findOne({ _id: userId });
+  return user;
+};
+
 exports.queries = {
   createUser,
   getUsers,
+  getUserByUserId,
 };
