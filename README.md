@@ -14,9 +14,9 @@ This is my solution for [Exercise Tracker Project](https://www.freecodecamp.org/
 - [pino](https://getpino.io)
 - [nodemon](https://nodemon.io)
 
-## [🚧WIP] Demo
+## Demo
 
-View project demo at [todo: deploy and put the link]
+View the demo at https://tanimon-exercise-tracker.herokuapp.com/
 
 ## Instructions
 
